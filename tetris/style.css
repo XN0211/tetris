@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px;
+}
+
+.game-board {
+    border: 2px solid #444;
+    background-color: #000;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(20, 30px);
+    gap: 1px;
+    background-color: #222;
+    padding: 1px;
+}
+
+#next-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 25px);
+    grid-template-rows: repeat(4, 25px);
+    gap: 1px;
+    background-color: #222;
+    padding: 1px;
+    margin-top: 10px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+}
+
+.empty {
+    background-color: #111;
+}
+
+/* ¤è??¦â */
+.I { background-color: #00f0f0; }
+.O { background-color: #f0f000; }
+.T { background-color: #a000f0; }
+.S { background-color: #00f000; }
+.Z { background-color: #f00000; }
+.J { background-color: #0000f0; }
+.L { background-color: #f0a000; }
+
+.ghost {
+    opacity: 0.3;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#pause-button {
+    background-color: #f0ad4e;
+}
+
+#pause-button:hover {
+    background-color: #ec971f;
+}
+
+.score-container {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.controls {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.controls p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+}
+
+/* ??¦¡?? */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column-reverse;
+    }
+
+    .game-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #grid {
+        grid-template-columns: repeat(10, 25px);
+        grid-template-rows: repeat(20, 25px);
+    }
+
+    #next-grid {
+        grid-template-columns: repeat(4, 20px);
+        grid-template-rows: repeat(4, 20px);
+    }
+}
